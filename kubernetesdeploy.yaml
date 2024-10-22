@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jaya-deploy
+  name: jaya-deploy-app-health
   labels:
-    app: jaya-deploy-app
+    app: jaya-deploy-health
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: jaya-deploy-app
+      app: jaya-deploy-health
   template:
     metadata:
       labels:
-        app: jaya-deploy-app
+        app: jaya-deploy-health
     spec:
       containers:
       - name: jaya-deploy-container
@@ -23,12 +23,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: jaya-deploy-service
+  name: jaya-deploy-health-service
   labels:
-    app: jaya-deploy-app
+    app: jaya-deploy-health
 spec:
   selector:
-    app: jaya-deploy-app
+    app: jaya-deploy-health
 
   type: NodePort
   ports:
