@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: jaya-deploy-container
-        image: jaya002/web-server:latest
+        image: jaya002/health-service:latest
         ports:
         - containerPort: 8082
 ---
